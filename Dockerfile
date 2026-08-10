@@ -7,7 +7,14 @@ RUN pip3 uninstall -y buildozer
 
 # Get the latest JDK version as Buildozer requires the latest version to build the APK
 RUN sudo apt-get update && \
-    sudo apt-get install -y software-properties-common && \
+    sudo apt-get install -y \
+        software-properties-common \
+        autopoint \
+        gettext \
+        autoconf \
+        automake \
+        libtool \
+        pkg-config && \
     sudo rm -rf /var/lib/apt/lists/*
 RUN sudo add-apt-repository ppa:openjdk-r/ppa
 RUN sudo apt update
